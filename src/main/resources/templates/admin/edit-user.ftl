@@ -93,7 +93,6 @@
 
         <div class="form-group <#if errorMap['country']??>has-error</#if>">
             <label>Country</label>
-
             <select name="country">
                 <option value="">-Select-</option>
                 <#list countries as countryFromList>
@@ -109,5 +108,11 @@
             <button type="submit" class="btn btn-default" name="cancel" value="Cancel">Cancel</button>
         </div>
     </form>
+
+    <style>
+        .has-error select {
+            border: solid 1px red;
+        }
+    </style>
 
 </@layout.mainLayout>
