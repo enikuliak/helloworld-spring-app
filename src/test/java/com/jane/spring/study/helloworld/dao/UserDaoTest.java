@@ -66,37 +66,16 @@ public class UserDaoTest {
 
     @Test
     public void testSearch() {
-        Predicate<User> conditionLambda = user -> "root".equals(user.getUsername());
-        List<User> usersWithLambda = userDao.search(conditionLambda);
-
-        Predicate<User> conditionInnerClass = new Predicate<User>() {
-            @Override
-            public boolean test(User user) {
-                return "root".equals(user.getUsername());
-            }
-        };
-        List<User> usersWithInnerClass = userDao.search(conditionInnerClass);
-
-        Predicate<User> twoConditions =
-                user -> "root".equals(user.getUsername()) || "root".equals(user.getEmail().substring(0, 4));
-        List<User> userByTwoConditions = userDao.search(twoConditions);
-
-        assertEquals(usersWithInnerClass, usersWithLambda);
-        assertEquals(2, usersWithLambda.size());
-        assertEquals(4, userByTwoConditions.size());
+        List<User> users = userDao.search("root");
+        assertEquals(4, users.size());
     }
 
     @Test
     public void testSearchFirst() {
-        Predicate<User> condition = user -> "root".equals(user.getUsername());
-        Optional<User> searchResult = userDao.searchFirst(condition);
-
+        Optional<User> searchResult = userDao.searchFirst("root");
         assertTrue("User is found", searchResult.isPresent());
 
-        // Test non-existent.
-        condition = user -> "root_that_doesnot_exist".equals(user.getUsername());
-        searchResult = userDao.searchFirst(condition);
-
+        searchResult = userDao.searchFirst("root_that_doesnot_exist");
         assertFalse("User is not found", searchResult.isPresent());
     }
 
