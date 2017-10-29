@@ -32,7 +32,7 @@ public class UserService {
     public UserService(UserDao dao) {
         this.dao = dao;
 
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 176; i++) {
             User user = new User();
             user.setFirstName("Jane");
             user.setLastName("Nik");
