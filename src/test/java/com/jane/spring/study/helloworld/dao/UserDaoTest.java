@@ -4,10 +4,10 @@ import com.jane.spring.study.helloworld.entities.User;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.security.SecureRandom;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
-import java.util.function.Predicate;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.*;
@@ -22,7 +22,7 @@ public class UserDaoTest {
 
     @Before
     public void setUp() {
-        this.random = new Random();
+        this.random = new SecureRandom();
         this.userDao = new UserDao();
 
         // Create some users.

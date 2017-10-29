@@ -28,18 +28,48 @@ public class SignUpController {
     private final UserService userService;
     private final CountryService countryService;
 
+    /**
+     * Constructs sign up controller.
+     *
+     * @param userService    User service.
+     * @param countryService Country service.
+     */
     @Autowired
     public SignUpController(UserService userService, CountryService countryService) {
         this.userService = userService;
         this.countryService = countryService;
     }
 
+    /**
+     * Handles GET request returning HTML page with sign up form.
+     *
+     * @param model Model for the template.
+     * @return Template name to render.
+     */
     @GetMapping
     public String get(Model model) {
         addCommonDataToModel(model, "", "", "", "", "", "", "", 0, 0, 0);
         return "sign-up";
     }
 
+    /**
+     * Handles POST request to sign up user.
+     *
+     * @param model          Model.
+     * @param firstName      TODO(enikuliak): move to appropriate DTO with validation.
+     * @param lastName
+     * @param username
+     * @param gender
+     * @param email
+     * @param country
+     * @param phone
+     * @param year
+     * @param day
+     * @param month
+     * @param password
+     * @param repeatPassword
+     * @return Template by name for rendering or redirect location in case of successful registration.
+     */
     @PostMapping
     public String post(Model model,
                        @RequestParam(required = false) String firstName,
@@ -88,6 +118,21 @@ public class SignUpController {
         return "sign-up";
     }
 
+    /**
+     * Adds attributes to the model for the template.
+     *
+     * @param model     Model to attributes to.
+     * @param firstName TODO(enikuliak): use sign up DTO with validation here.
+     * @param lastName
+     * @param username
+     * @param gender
+     * @param email
+     * @param country
+     * @param phone
+     * @param year
+     * @param day
+     * @param month
+     */
     private void addCommonDataToModel(
             Model model,
             String firstName,
@@ -116,7 +161,6 @@ public class SignUpController {
         if (year > 0) {
             model.addAttribute("year", year);
         }
-
         model.addAttribute("currentYear", Year.now());
     }
 }
