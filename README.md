@@ -16,24 +16,24 @@ http://localhost:8080/admin/countries
 ```
 
 ### Sign in 
-![Screenshot](/enikuliak/helloworld-spring-app/blob/master/documentation/screenshot-sign-in.png?raw=true)
+![Screenshot](/documentation/screenshot-sign-in.png?raw=true)
 
 
 ### Sign up
-![Screenshot](/enikuliak/helloworld-spring-app/blob/master/documentation/screenshot-sign-up.png?raw=true)
+![Screenshot](/documentation/screenshot-sign-up.png?raw=true)
 
 
 ### List of users
-![Screenshot](/enikuliak/helloworld-spring-app/blob/master/documentation/screenshot-users.png?raw=true)
+![Screenshot](/documentation/screenshot-users.png?raw=true)
 
 
 ### Edit user
-![Screenshot](/enikuliak/helloworld-spring-app/blob/master/documentation/screenshot-edit-user.png?raw=true)
+![Screenshot](/documentation/screenshot-edit-user.png?raw=true)
 
 
 ### List countries
-![Screenshot](/enikuliak/helloworld-spring-app/blob/master/documentation/screenshot-countries.png?raw=true)
+![Screenshot](/documentation/screenshot-countries.png?raw=true)
 
 
 ### Edit country
-![Screenshot](/enikuliak/helloworld-spring-app/blob/master/documentation/screenshot-edit-country.png?raw=true)
+![Screenshot](/documentation/screenshot-edit-country.png?raw=true)
