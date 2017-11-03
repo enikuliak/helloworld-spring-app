@@ -1,4 +1,4 @@
-# Basic web application with Spring and Databases
+# Basic web application with Spring, Database, Freemarker and Bootstrap.
 
 Spring application that has sign up, sign in and basic administration page to list users.
 
